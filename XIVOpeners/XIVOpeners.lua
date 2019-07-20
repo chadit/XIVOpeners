@@ -57,6 +57,14 @@ xivopeners.supportedJobs = {
         openerAvailable = xivopeners_mnk.openerAvailable,
         checkOpenerIds = xivopeners_mnk.checkOpenerIds,
         drawCall = xivopeners_mnk.drawCall
+    },
+    [xivopeners.jobs.DarkKnight] = {
+        main = xivopeners_drk.main,
+        openerInfo = xivopeners_drk.openerInfo,
+        queueOpener = xivopeners_drk.queueOpener,
+        openerAvailable = xivopeners_drk.openerAvailable,
+        checkOpenerIds = xivopeners_drk.checkOpenerIds,
+        drawCall = xivopeners_drk.drawCall
     }
 }
 xivopeners.oocEnable = false
