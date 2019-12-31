@@ -13,32 +13,6 @@ xivopeners.GUI = {
     drawMode = 1,
 }
 
-
-xivopeners.v = table.valid
-function xivopeners.valid(...)
-    local tbl = {...}
-    local size = #tbl
-    if size > 0 then
-        local count = tbl[1]
-        if type(count) == "number" then
-            if size == (count + 1) then
-                for i = 2, size do
-                    if not xivopeners.v(tbl[i]) then return false end
-                end
-                return true
-            end
-        else
-            for i = 1, size do
-                if not xivopeners.v(tbl[i]) then return false end
-            end
-            return true
-        end
-    end
-    return false
-end
-
-
-
 xivopeners.running = false
 
 -- credit to Kayla D'orden#2527 on discord for this idea and providing the list
@@ -529,6 +503,29 @@ function xivopeners.SaveSettings(force)
             PreviousSave = table.deepcopy(xivopeners.settings)
         end
     end
+end
+
+xivopeners.v = table.valid
+function xivopeners.valid(...)
+    local tbl = {...}
+    local size = #tbl
+    if size > 0 then
+        local count = tbl[1]
+        if type(count) == "number" then
+            if size == (count + 1) then
+                for i = 2, size do
+                    if not xivopeners.v(tbl[i]) then return false end
+                end
+                return true
+            end
+        else
+            for i = 1, size do
+                if not xivopeners.v(tbl[i]) then return false end
+            end
+            return true
+        end
+    end
+    return false
 end
 
 RegisterEventHandler("Module.Initalize", xivopeners.Init, "xivopeners.Init")
